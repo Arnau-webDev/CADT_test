@@ -1,0 +1,30 @@
+
+.sidebar {
+    height: 100vh;
+    background-color: #40babb;
+    width: 300px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 12em;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.6rem;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    } 
+
+    .active {
+        background-color: black;
+        color: white;
+    }
+
+}
