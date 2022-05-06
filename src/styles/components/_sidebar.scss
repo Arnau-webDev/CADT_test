@@ -1,9 +1,9 @@
 
 .sidebar {
-    height: 100vh;
     background-color: #40babb;
     width: 300px;
-
+    min-height: 200vh;
+    
     div {
         display: flex;
         flex-direction: column;
