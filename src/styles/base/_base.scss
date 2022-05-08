@@ -12,3 +12,11 @@ body {
     width: 100vw;
     justify-content: center;
 }
+
+@media (max-width: 1150px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+}

@@ -1,14 +1,19 @@
 
 .tableContainer {
     flex: 1 3 auto;
+    position: relative;
 }
 
 .table {
 	width: 70%;
     // margin: 10em auto;
-    margin: 9em 0 0 8em;
+    margin: 9em 0 4em 8em;
 	border-collapse: collapse;
+    padding-bottom: 2em;
 
+    @media (max-width: 1150px) {
+        margin: 3em auto;
+    }
     
     td, th{
         padding: 23px 15px;
@@ -22,31 +27,68 @@
     & th:first-child {
         width: 100px;
         text-align: left;
+
+        @media(max-width: 1150px) {
+            text-align: right;
+        }
     }
 
     & td:first-child {
         text-align: left;
+
+        @media(max-width: 1150px) {
+            text-align: right;
+        }
     }
 
-    .user {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #40babb;
-        border-radius: 50%;
-        color: white;
-        height: 50px;
-        width: 50px;
-    }
+   @media (min-width: 1150px) {
+        .user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #40babb;
+            border-radius: 50%;
+            color: white;
+            height: 50px;
+            width: 50px;
+        }
 
-    .centerUser {
-        width: 0;
-        margin: 0 auto;
-    }
+        .centerUser {
+            width: 0;
+            margin: 0 auto;
+        }
+   }
     
-    .filler {
-        width: 200px;
+    @media (min-width:1650px) {
+        .filler {
+            width: 200px;
+        }
     }
+
 }
 
+@media(max-width: 1150px){
 
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+    }
+    .table tr{
+        margin: 3em 0;
+    }
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left:0;
+        width: 50%;
+        padding-left:15px;
+        font-size:15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}

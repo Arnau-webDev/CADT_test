@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import fetchInfo from "../helpers/fetchInfo";
 
-export const useFetchInfo = ( table ) => {
+export const useFetchInfo = ( table, limit ) => {
 
 	const [state, setState] = useState({
 		data: [],
 		loading: true
 	});
+		
+	// console.log(dynamicLimit);
 
 	useEffect(() => {
-		fetchInfo(table)
+		fetchInfo(table, limit)
 			.then((items) => {
 				setTimeout(() => {
 					setState({
@@ -18,6 +20,7 @@ export const useFetchInfo = ( table ) => {
 					});
 				}, 300);
 			});
+
 	}, [ table ]);
 
 	return state;

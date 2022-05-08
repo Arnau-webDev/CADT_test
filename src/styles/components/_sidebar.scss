@@ -4,12 +4,24 @@
     width: 300px;
     min-height: 200vh;
     
+    @media (min-width: 1150px) {
+        position: relative;
+    }
+    
     div {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         margin-top: 12em;
+        position: fixed;
+        width: 300px;
+
+        @media (max-width: 1150px) {
+            position: inherit;
+            width: 80%;
+            margin: 20px auto;
+        }
     }
 
     a {
@@ -25,6 +37,16 @@
     .active {
         background-color: black;
         color: white;
+
+        @media screen and (max-width: 1150px) {
+            border-radius: 20px;
+        }
+    }
+
+    @media (max-width: 1150px) {
+        width: 100vw;
+        min-height: auto;
+        position: inherit;
     }
 
 }
