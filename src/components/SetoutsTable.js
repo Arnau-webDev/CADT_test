@@ -2,7 +2,10 @@ import React from "react";
 import { useFetchInfo } from "../hooks/useFetchInfo";
 import { useViewport } from "../hooks/useViewport";
 import LoadingSpinner from "./LoadingSpinner";
+import Modal from "./Modal";
 import TableRow from "./TableRow";
+
+import { useSelector } from "react-redux";
 
 const SetoutsTable = () => {
 
@@ -11,7 +14,15 @@ const SetoutsTable = () => {
 	const { width } = useViewport();
 	const breakpoint = 1150;
 
+	const {modalIsOpen} = useSelector( state => state.modal );
+
 	if(loading) return <div className="tableContainer"><LoadingSpinner /></div>;
+
+	if(modalIsOpen && width > breakpoint) return (
+		<div className="tableContainer center">
+			<Modal typeOfTable={"setouts"}/>
+		</div>
+	);
 
 	return (
 		<div className="tableContainer">

@@ -1,7 +1,7 @@
 
 .sidebar {
     background-color: #40babb;
-    width: 300px;
+    min-width: 300px;
     min-height: 200vh;
     
     @media (min-width: 1150px) {
@@ -15,7 +15,7 @@
         align-items: center;
         margin-top: 12em;
         position: fixed;
-        width: 300px;
+        min-width: 300px;
 
         @media (max-width: 1150px) {
             position: inherit;

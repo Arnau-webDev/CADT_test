@@ -1,10 +1,18 @@
 import React from "react";
 import {  NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useViewport } from "../hooks/useViewport";
+
 
 const Sidebar = () => {
+
+	const {modalIsOpen} = useSelector( state => state.modal );
+	const { width } = useViewport();
+	const breakpoint = 1150;
+
 	return (
 		<>
-			<nav className="sidebar">
+			<nav className="sidebar" style={modalIsOpen && width > breakpoint ? {minHeight: "100vh"} : {}}>
 				<div>
 					<NavLink className={(navData) => (navData.isActive ? "active" : "")} to="/designs">Designs</NavLink>
 					<NavLink className={(navData) => (navData.isActive ? "active" : "")} to="/setouts">Setouts</NavLink>

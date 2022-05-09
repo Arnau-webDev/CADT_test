@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import fetchInfo from "../helpers/fetchInfo";
 
+import { useSelector } from "react-redux";
+
 export const useFetchInfo = ( table, limit ) => {
+
+	const { updated } = useSelector( state => state.modal );
 
 	const [state, setState] = useState({
 		data: [],
 		loading: true
 	});
-		
-	// console.log(dynamicLimit);
 
 	useEffect(() => {
 		fetchInfo(table, limit)
@@ -21,7 +23,7 @@ export const useFetchInfo = ( table, limit ) => {
 				}, 300);
 			});
 
-	}, [ table ]);
+	}, [ table, updated ]);
 
 	return state;
 };

@@ -10,13 +10,13 @@
       "wales": 333
     },
     {
-      "courses": 400,
+      "courses": "300",
       "id": 19,
       "name": "19th Design",
       "status": "in-progress",
-      "updated": "2021-04-11 08:25:41.567611",
+      "updated": "2022-05-09T18:03:20.209Z",
       "user_id_last_update": 2,
-      "wales": 100
+      "wales": "222"
     },
     {
       "courses": 350,
@@ -184,11 +184,11 @@
   "setouts": [
     {
       "id": 1,
-      "updated": "2021-03-24 08:44:31.810221",
-      "name": "1st Setout",
-      "machine_name": "RSJ_4_1",
-      "machine_width": 130,
-      "courses": 200
+      "updated": "2022-05-09T18:02:32.343Z",
+      "name": "1st Setout69",
+      "machine_name": "RSJ_4_167",
+      "machine_width": "1302477",
+      "courses": "2002599"
     },
     {
       "id": 2,
@@ -224,10 +224,10 @@
     },
     {
       "id": 6,
-      "updated": "2021-03-29 08:44:31.810221",
+      "updated": "2022-05-09T18:02:42.319Z",
       "name": "6th Setout",
       "machine_name": "RSF_4_2_EL",
-      "machine_width": 3000,
+      "machine_width": "9999",
       "courses": 100
     },
     {
@@ -344,7 +344,13 @@
     }
   ],
   "users": [
-    { "id": 1, "name": "Walter Doe" },
-    { "id": 2, "name": "John Doe" }
+    {
+      "id": 1,
+      "name": "Walter Doe"
+    },
+    {
+      "id": 2,
+      "name": "John Doe"
+    }
   ]
 }

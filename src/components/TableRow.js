@@ -1,17 +1,31 @@
 import React from "react";
 
-import moment from "moment";
+import moment from "moment/min/moment-with-locales";
 import { useViewport } from "../hooks/useViewport";
+import { useDispatch } from "react-redux";
+import { resetHasUpdated, setModalActiveRow, setModalState } from "../actions/modal";
 
 const TableRow = ({tableInfo, typeOfTable}) => {
+
+	const dispatch = useDispatch();
 
 	const { width } = useViewport();
 	const breakpoint = 1150;
 
+	const handleOpenModal = () => {
+		if( width > breakpoint) {
+			dispatch(setModalState());
+			dispatch(setModalActiveRow(tableInfo));
+			dispatch(resetHasUpdated());
+		}
+	};
+
+	moment.locale("es");
+
 	return (
 		<>
 			{typeOfTable === "designs" ? (
-				<tr>
+				<tr onClick={handleOpenModal}>
 					<td data-label="Name">{tableInfo.name}</td>
 					<td data-label="Courses">{tableInfo.courses}</td>
 					<td data-label="Wales">{tableInfo.wales}</td>
@@ -26,7 +40,7 @@ const TableRow = ({tableInfo, typeOfTable}) => {
 					{ width > breakpoint && (<td className="filler"></td>)}
 				</tr>
 			) : (
-				<tr>
+				<tr onClick={handleOpenModal}>
 					<td data-label="Name">{tableInfo.name}</td>
 					<td data-label="Machine Name">{tableInfo.machine_name}</td>
 					<td data-label="Machine Width">{tableInfo.machine_width}</td>
