@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import fetchInfo from "../helpers/fetchInfo";
-
 import { useSelector } from "react-redux";
+
+import fetchInfo from "../helpers/fetchInfo";
 
 export const useFetchInfo = ( table, limit ) => {
 

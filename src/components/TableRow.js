@@ -1,8 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import moment from "moment/min/moment-with-locales";
+
 import { useViewport } from "../hooks/useViewport";
-import { useDispatch } from "react-redux";
 import { resetHasUpdated, setModalActiveRow, setModalState } from "../actions/modal";
 
 const TableRow = ({tableInfo, typeOfTable}) => {

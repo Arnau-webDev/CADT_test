@@ -16,8 +16,6 @@ const patchInfo = async ( tableInfo, body, id ) => {
 
 	if(res.ok) data = await res.json();
 
-	console.log(data);
-
 	return data;
 };
 

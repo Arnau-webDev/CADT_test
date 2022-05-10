@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { BrowserRouter,	Routes,	Route, Navigate } from "react-router-dom";
 
@@ -6,7 +7,6 @@ import Sidebar from "../components/Sidebar";
 import DesignsTable from "../components/DesignsTable";
 import SetoutsTable from "../components/SetoutsTable";
 
-import {useSelector} from "react-redux";
 import { useViewport } from "../hooks/useViewport";
 
 const AppRouter = () => {

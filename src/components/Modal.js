@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setModalState, updateTableRow } from "../actions/modal";
 import { useForm } from "../hooks/useForm";
+
+import { setModalState, updateTableRow } from "../actions/modal";
 
 const Modal = ({typeOfTable}) => {
 
@@ -42,13 +43,10 @@ const Modal = ({typeOfTable}) => {
 		}
 	};
 
-	// console.log(formValuesDesigns);
-	// console.log(formValuesSetouts);
-
 	return (
 		<>
 			<form className="form animate__animated animate__fadeIn">
-				<div className="card">
+				<div className="modal_card">
 					<h2 className="close" onClick={handleCloseModal}><i className="fa-solid fa-xmark"></i>  </h2>
 					<h3 className="step-title">Edit your {typeOfTable === "designs" ? "Design" : "Setout"}</h3>
 
@@ -73,7 +71,6 @@ const Modal = ({typeOfTable}) => {
 					<button className="btn" type="button" onClick={handleSubmit}>Submit</button>
 				</div>
 			</form>
-
 		</>
 	);
 };

@@ -1,11 +1,12 @@
 import React from "react";
-import { useFetchInfo } from "../hooks/useFetchInfo";
-import { useViewport } from "../hooks/useViewport";
+import { useSelector } from "react-redux";
+
+import TableRow from "./TableRow";
 import LoadingSpinner from "./LoadingSpinner";
 import Modal from "./Modal";
-import TableRow from "./TableRow";
 
-import { useSelector } from "react-redux";
+import { useFetchInfo } from "../hooks/useFetchInfo";
+import { useViewport } from "../hooks/useViewport";
 
 const SetoutsTable = () => {
 
@@ -16,10 +17,10 @@ const SetoutsTable = () => {
 
 	const {modalIsOpen} = useSelector( state => state.modal );
 
-	if(loading) return <div className="tableContainer"><LoadingSpinner /></div>;
+	if(loading) return <div className="tableContainer"> <LoadingSpinner /> </div>;
 
 	if(modalIsOpen && width > breakpoint) return (
-		<div className="tableContainer center">
+		<div className="tableContainer modal_center">
 			<Modal typeOfTable={"setouts"}/>
 		</div>
 	);
